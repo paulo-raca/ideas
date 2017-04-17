@@ -1,6 +1,8 @@
 Ideas for next projects.
+
 Many of them are somehow related.
-Most of them might never happen :D
+
+Most of them will never happen :D
 
 # Linux 
 
@@ -12,7 +14,7 @@ Most of them might never happen :D
 
 ## PTY
 - [Linux PTY driver doesn't allow changing number of bits and parity](https://bugzilla.kernel.org/show_bug.cgi?id=112821)
-- Can be used to create soft serial port bridges
+- Used to create soft serial port bridges
 - Superseeded by greybus?
 
 ## LED dithering
@@ -49,6 +51,18 @@ Most of them might never happen :D
   - Usable from fruit-Pi, arduinos, etc.
   - Compatible with USB, NFC, etc.
 - Create a fingerprint-enabled U2F device
+
+# [PyPCB](https://github.com/paulo-raca/PyPcb)
+- HDL for discrete components
+- Based on Python
+- Replaces Schematics
+- Supports hierarchy 
+  - Submodules can be treated as a standard component
+  - Can generate symbols and footprints for complex blocks
+  - A 1-element submodule can be used to easily map a "Generic Footprint" to a specific chip name and pins
+- Supports single wire, named wire bundles (SCL, SDA, GND, VCC), Buses (Wire[] or Bundle[]), etc
+- Works with KiCad, maybe others
+- Very similar to [Skidl](https://github.com/xesscorp/skidl)
 
 # Android Logcat
 Write a CLI that replaces logcat, adding:
