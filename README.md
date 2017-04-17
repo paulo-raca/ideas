@@ -1,5 +1,5 @@
 Ideas for next projects.
-Many of them are somehow related :D
+Many of them are somehow related, most of them will never happen :D
 
 # Highcharts
 - 3D
