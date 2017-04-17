@@ -36,7 +36,7 @@ Many of them are somehow related, most of them will never happen :D
 # HID
 - Write a pretty/portable/expandable library that implements HID
   - Usable from fruit-Pi, arduinos, etc.
-  - Works on USB, [I2C](http://download.microsoft.com/download/7/D/D/7DD44BB7-2A7A-4505-AC1C-7227D3D96D5B/hid-over-i2c-protocol-spec-v1-0.docx), [Bluetooth](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=246761) [LE](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=245141), [Greybus](https://github.com/projectara/greybus-spec/blob/master/source/device_class/hid.rst), etc
+  - Works on USB, [I2C](http://download.microsoft.com/download/7/D/D/7DD44BB7-2A7A-4505-AC1C-7227D3D96D5B/hid-over-i2c-protocol-spec-v1-0.docx), [Bluetooth](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=246761) [LE](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=245141), [Greybus](https://github.com/projectara/greybus-spec/blob/master/source/device_class/hid.rst), [UHID](https://www.kernel.org/doc/Documentation/hid/uhid.txt), etc
   - TCP version of HID?
     - Based on Wifi-Direct? (I wish ESP32 had support for Wifi Direct)
     - Support for Discovery? UPNP?
