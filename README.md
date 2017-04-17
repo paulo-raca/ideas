@@ -2,19 +2,17 @@
 Ideas for next projects.
 Many of them are somehow related :D
 
-# Web 
-## Highcharts
-### 3D
-- Proper support for rotating charts 360º -- Right now, the axis labels and ticks only work properly if the angle is +- 90º
-- Perspective-transform axis labels, so that it doesn't different labels don't overlap
+# Highcharts
+- 3D
+  - Proper support for rotating charts 360º -- Right now, the axis labels and ticks only work properly if the angle is +- 90º
+  - Perspective-transform axis labels, so that it doesn't different labels don't overlap
+- Color Axis
+  - Find a way to bind color axis and Y axis ticks / scale
+  - Automatically create gradient bands around ticks (Like I use on my samples and on Experimental Design)
 
-### Color Axis
-- Find a way to bind color axis and Y axis ticks / scale
-- Automatically create gradient bands around ticks (Like I use on my samples and on Experimental Design)
-
-## Experimental Design
-My HTML/CSS/JS skills were pretty lame when I wrote the current version
-- Make a pretty UI. Probably use Bootstrap and/or React?
+# Experimental Design
+  My HTML/CSS/JS skills were pretty lame when I wrote the current version
+  - Make a pretty UI. Probably use Bootstrap and/or React?
 
 # Hardware
 ## [Greybus](https://github.com/projectara/greybus-spec/)
@@ -38,7 +36,7 @@ My HTML/CSS/JS skills were pretty lame when I wrote the current version
     - Support for Discovery? UPNP?
 
 ## [U2F](https://fidoalliance.org/download/)
-- Write a pretty/portable/expandable library that implements U2F
+- A pretty/portable/expandable library that implements U2F
   - Usable from fruit-Pi, arduinos, etc.
   - Compatible with USB, NFC, etc.
 - Create a fingerprint-enabled U2F device
