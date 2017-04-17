@@ -1,5 +1,6 @@
 Ideas for next projects.
-Many of them are somehow related, most of them will never happen :D
+Many of them are somehow related.
+Most of them might never happen :D
 
 # Linux 
 
