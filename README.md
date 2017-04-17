@@ -1,12 +1,20 @@
 Ideas for next projects.
 Many of them are somehow related, most of them will never happen :D
 
-# Linux PTY
+# Linux 
+
+## [Greybus](https://github.com/projectara/greybus-spec/)
+- Multiple transport layers (USB, I2C, SPI, Serial, TCP/IP, etc) -- [gbridge](https://github.com/anobli/gbridge)
+- Portable, embedded library for creating greybus devices
+  - Usable from Arduino, Fruit-Pi, etc
+- Replace Expanduino
+
+## PTY
 - [Linux PTY driver doesn't allow changing number of bits and parity](https://bugzilla.kernel.org/show_bug.cgi?id=112821)
 - Can be used to create soft serial port bridges
 - Superseeded by greybus?
 
-# Linux LED dithering
+## LED dithering
 - Not all led drivers support multiple brightness levels -- We could use dithering instead!
 
 # Highcharts
@@ -20,12 +28,6 @@ Many of them are somehow related, most of them will never happen :D
 # Experimental Design
   My HTML/CSS/JS skills were pretty lame when I wrote the current version
   - Make a pretty UI. Probably use Bootstrap and/or React?
-
-# [Greybus](https://github.com/projectara/greybus-spec/)
-- Multiple transport layers (USB, I2C, SPI, Serial, TCP/IP, etc) -- [gbridge](https://github.com/anobli/gbridge)
-- Portable, embedded library for creating greybus devices
-  - Usable from Arduino, Fruit-Pi, etc
-- Replace Expanduino
 
 # [PluggableUSB](https://github.com/arduino/Arduino/wiki/PluggableUSB-and-PluggableHID-howto)
 - Make a version based on [Linux Gadget](https://www.kernel.org/doc/Documentation/usb/gadget_configfs.txt)
