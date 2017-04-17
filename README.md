@@ -1,6 +1,11 @@
 Ideas for next projects.
 Many of them are somehow related, most of them will never happen :D
 
+# Linux PTY
+- [Linux PTY driver doesn't allow changing number of bits and parity](https://bugzilla.kernel.org/show_bug.cgi?id=112821)
+- Can be used to create soft serial port bridges
+- Superseeded by greybus?
+
 # Highcharts
 - 3D
   - Proper support for rotating charts 360º -- Right now, the axis labels and ticks only work properly if the angle is +- 90º
