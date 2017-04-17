@@ -6,6 +6,9 @@ Many of them are somehow related, most of them will never happen :D
 - Can be used to create soft serial port bridges
 - Superseeded by greybus?
 
+# Linux LED dithering
+- Not all led drivers support multiple brightness levels -- We could use dithering instead!
+
 # Highcharts
 - 3D
   - Proper support for rotating charts 360º -- Right now, the axis labels and ticks only work properly if the angle is +- 90º
