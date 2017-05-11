@@ -22,7 +22,9 @@ Most of them will never happen :D
 
 # Highcharts
 - 3D
-  - Proper support for rotating charts 360º -- Right now, the axis labels and ticks only work properly if the angle is +- 90º
+  - Support animation on polihedron
+  - Implement cuboid based on polihedron
+  - Fix Z calculation on cuboid
   - Perspective-transform axis labels, so that it doesn't different labels don't overlap
 - Color Axis
   - Find a way to bind color axis and Y axis ticks / scale
