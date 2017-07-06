@@ -24,7 +24,7 @@ Most of them will never happen :D
 - 3D
   - Implement cuboid based on polihedron
   - Fix Z calculation on cuboid
-  - Perspective-transform axis labels, so that it doesn't different labels don't overlap
+  - [Perspective-transform axis labels, so that it doesn't different labels don't overlap](https://github.com/highcharts/highcharts/pull/6929)
 
 # Experimental Design
   My HTML/CSS/JS skills were pretty lame when I wrote the current version
