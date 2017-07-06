@@ -17,8 +17,9 @@ Most of them will never happen :D
 - Used to create soft serial port bridges
 - Superseeded by greybus?
 
-## LED dithering
+## LED dithering/PDM
 - Not all led drivers support multiple brightness levels -- We could use dithering instead!
+  - https://en.wikipedia.org/wiki/Pulse-density_modulation
 
 # Highcharts
 - 3D
