@@ -19,13 +19,14 @@ Most of them will never happen :D
 
 ## LED dithering/PDM
 - Not all led drivers support multiple brightness levels -- We could use dithering instead!
-  - https://en.wikipedia.org/wiki/Pulse-density_modulation
+- ✓ Arduino: https://github.com/paulo-raca/ArduinoLedDithering
+- ✓ Linux: https://github.com/paulo-raca/linux/commit/ledtrig_dither
 
 # Highcharts
 - 3D
-  - Implement cuboid based on polihedron
-  - Fix Z calculation on cuboid
-  - [Perspective-transform axis labels, so that it doesn't different labels don't overlap](https://github.com/highcharts/highcharts/pull/6929)
+  - Update Documentation and examples on my plugins
+  - Implement cuboid based on polihedron, fix Z calculation on cuboid
+  - ✓ [Perspective-transform axis labels, so that it doesn't different labels don't overlap](https://github.com/highcharts/highcharts/pull/6929)
 
 # Experimental Design
   My HTML/CSS/JS skills were pretty lame when I wrote the current version
@@ -78,7 +79,7 @@ Write a CLI that replaces logcat, adding:
   - Light blade: WS2812 strip
   - Sound: [MAX98357](https://learn.adafruit.com/adafruit-max98357-i2s-class-d-mono-amp/overview)
   - Removable blade
-  - 1000mAh LiPo batter
+  - 1000mAh LiPo battery
   - Big DC-DC converter with 5V output (UBEC)
   - Wishlist: Piezo sensors for detecting blade collisions
   - Wishlist: [Valve lighthouse sensor](https://github.com/ashtuchkin/vive-diy-position-sensor)
