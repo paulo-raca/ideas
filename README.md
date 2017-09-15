@@ -22,13 +22,6 @@ Most of them will never happen :D
 - ✓ Arduino: https://github.com/paulo-raca/ArduinoLedDithering
 - ✓ Linux: https://github.com/paulo-raca/linux/commit/ledtrig_dither
 
-# Highcharts
-- 3D
-  - Update Documentation and examples on my plugins
-  - Implement cuboid based on polihedron, fix Z calculation on cuboid
-  - ✓ [Perspective-transform axis labels, so that it doesn't different labels don't overlap](https://github.com/highcharts/highcharts/pull/6929)
-  - ✓ [Distance scaling of markers on 3D scatter](https://github.com/highcharts/highcharts/pull/6929)
-
 # Experimental Design
   My HTML/CSS/JS skills were pretty lame when I wrote the current version
   - Make a pretty UI. Probably use Bootstrap and/or React?
