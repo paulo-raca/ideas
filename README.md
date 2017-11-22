@@ -127,3 +127,6 @@ Write a CLI that replaces logcat, adding:
   - It should be possible to have many Managed Profiles per user (Seems to be possible, but not supported by the frontend app that handles the "CreateManagedProfile Intent")
   - It should be possible (With a explicit user permission) to inject code into the process before the app starts up
   
+  # Android Testing
+  - Fix AndroidJUnitRunner to be more "JUnit-y" -- That is, I want to be able to use RPC to implement a JUnit Runner on a process that executes within the Android test process. This should make it possible to create good test integration --  better than the current crapy integration with Android Studion and definitely better than AWS's DeviceFarm
+  
