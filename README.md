@@ -123,4 +123,7 @@ Write a CLI that replaces logcat, adding:
   - Launch apps as the virtual user
   - Instrument those apps to provide hooking
   - Requires forking Android :(
+- Actually, that's very similar to [Managed Profiles](https://source.android.com/devices/tech/admin/managed-profiles)
+  - It should be possible to have many Managed Profiles per user (Seems to be possible, but not supported by the frontend app that handles the "CreateManagedProfile Intent")
+  - It should be possible (With a explicit user permission) to inject code into the process before the app starts up
   
