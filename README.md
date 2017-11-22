@@ -58,13 +58,6 @@ Most of them will never happen :D
 - Works with KiCad, maybe others
 - Very similar to [Skidl](https://github.com/xesscorp/skidl)
 
-# Android Logcat
-Write a CLI that replaces logcat, adding:
-- Package name, Process name, user name
-- Filterable by package, user name, user id, process name, PID, TID, tag, message, Regex or wildcard
-- Uses colors to group messages from same user/package/process/thread
-- Also backup logs on ELK stack?
-
 # Lightsaber
 - Widely based on [BUILDING THE BRIGHTEST LIGHT SABRE IN THE WORLD](http://hackaday.com/2016/10/25/building-the-brightest-light-sabre-in-the-world/)
 - Hardware:
@@ -115,7 +108,16 @@ Write a CLI that replaces logcat, adding:
 - Scuba-like tool to visualize aggregated data.
 - Maybe Integrated with CRUD / Kibana / Keen.io, etc
 
-# Android Containers
+# Android
+
+## Logcat
+Write a CLI that replaces logcat, adding:
+- Package name, Process name, user name
+- Filterable by package, user name, user id, process name, PID, TID, tag, message, Regex or wildcard
+- Uses colors to group messages from same user/package/process/thread
+- Also backup logs on ELK stack?
+
+## Containers
 - Use Android's multiuser support for implementing containers
 - A special permission lets an app act as a container manager, which can:
   - Manage virtual users (Which internally are just 'regular' android users, but only visible to this app)
@@ -127,6 +129,6 @@ Write a CLI that replaces logcat, adding:
   - It should be possible to have many Managed Profiles per user (Seems to be possible, but not supported by the frontend app that handles the "CreateManagedProfile Intent")
   - It should be possible (With a explicit user permission) to inject code into the process before the app starts up
   
-  # Android Testing
+  ## Testing
   - Fix AndroidJUnitRunner to be more "JUnit-y" -- That is, I want to be able to use RPC to implement a JUnit Runner on a process that executes within the Android test process. This should make it possible to create good test integration --  better than the current crapy integration with Android Studion and definitely better than AWS's DeviceFarm
   
