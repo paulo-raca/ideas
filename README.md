@@ -108,6 +108,19 @@ Most of them will never happen :D
 - Scuba-like tool to visualize aggregated data.
 - Maybe Integrated with CRUD / Kibana / Keen.io, etc
 
+# ML
+
+## Banco de dados de Features
+- Encontrar / criar uma estrutura de dados / banco de dados para features de alta dimensionalidade, capaz de:
+  - Listar N elementos mais próximos / elementos dentro de um raio
+  - Usar distâncias de minkowski e Mahalanobis
+- Ideia:
+  - Montar uma BSP com todos os dados, 
+  - Durante a recuperação, em um nó não-folha, estimar a distancia minima do ponto buscado até cada nó filho
+  - O nó não-folha itera dados de todos os nós filhos fazendo merge ordenado pela distancia
+  - Os nós-filhos são acessados por ordem de distancia, o filho mais distante só sera acessado quando minDist(N) < dist(proximo)
+  - yield do python é ótimo para isso :D
+
 # Android
 
 ## Logcat
