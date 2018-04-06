@@ -17,6 +17,10 @@ Most of them will never happen :D
 - Completion of fusetree library
 - Use fusetree for MongoFS and SpotifyFS
 
+# MIDI
+- MIDI-powered harmonica, pan flute
+- Inspiration: https://hackaday.com/2018/03/23/servos-do-the-plucking-in-this-midi-music-box/
+
 # Linux 
 
 ## [Greybus](https://github.com/projectara/greybus-spec/)
