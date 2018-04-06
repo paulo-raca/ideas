@@ -4,7 +4,11 @@ Many of them are somehow related.
 
 Most of them will never happen :D
 
-# Linux 
+# Libretro
+- Core for Hack CPU from Nand2Tetris
+  - Customizable peripherals: Keyboard, Mouse, Screen, Sound, System Calls, Serial, etc
+- Core for Virtual Terminal
+  - Execute bash, ssh, etc
 
 # Fuse
 - Improvements to fusepy
@@ -12,6 +16,8 @@ Most of them will never happen :D
   - support for libfuse3
 - Completion of fusetree library
 - Use fusetree for MongoFS and SpotifyFS
+
+# Linux 
 
 ## [Greybus](https://github.com/projectara/greybus-spec/)
 - Multiple transport layers (USB, I2C, SPI, Serial, TCP/IP, etc) -- [gbridge](https://github.com/anobli/gbridge)
