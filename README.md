@@ -6,6 +6,13 @@ Most of them will never happen :D
 
 # Linux 
 
+# Fuse
+- Improvements to fusepy
+  - Custom encode/decode functions
+  - support for libfuse3
+- Completion of fusetree library
+- Use fusetree for MongoFS and SpotifyFS
+
 ## [Greybus](https://github.com/projectara/greybus-spec/)
 - Multiple transport layers (USB, I2C, SPI, Serial, TCP/IP, etc) -- [gbridge](https://github.com/anobli/gbridge)
 - Portable, embedded library for creating greybus devices
