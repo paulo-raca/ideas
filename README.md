@@ -131,6 +131,7 @@ Most of them will never happen :D
 - Encontrar / criar uma estrutura de dados / banco de dados para features de alta dimensionalidade, capaz de:
   - Listar N elementos mais próximos / elementos dentro de um raio
   - Usar distâncias de minkowski e Mahalanobis
+  - [R*_tree](https://en.wikipedia.org/wiki/R*_tree)?
 - Ideia:
   - Montar uma BSP com todos os dados, 
   - Durante a recuperação, em um nó não-folha, estimar a distancia minima do ponto buscado até cada nó filho
