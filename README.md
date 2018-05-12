@@ -4,6 +4,10 @@ Many of them are somehow related.
 
 Most of them will never happen :D
 
+# OpenWRT
+- Support for docker
+- Support for terminal within LuCI (Using [xtermjs](https://xtermjs.org)?)
+
 # Libretro
 - Core for Hack CPU from Nand2Tetris
   - Customizable peripherals: Keyboard, Mouse, Screen, Sound, System Calls, Serial, etc
