@@ -13,6 +13,7 @@ Most of them will never happen :D
   - Customizable peripherals: Keyboard, Mouse, Screen, Sound, System Calls, Serial, etc
 - Core for Virtual Terminal
   - Execute bash, ssh, etc
+- Export as OpenAI Gym
 
 # Fuse
 - Improvements to fusepy
