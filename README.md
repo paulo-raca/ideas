@@ -4,6 +4,12 @@ Many of them are somehow related.
 
 Most of them will never happen :D
 
+
+# Highcharts
+- Margem de erro não alinha com ponto
+- Boost para highchart-contour
+- Suporte para multiplos highchart-contour
+
 # OpenWRT
 - Support for docker
 - Support for terminal within LuCI (Using [xtermjs](https://xtermjs.org)?)
