@@ -9,6 +9,8 @@ Most of them will never happen :D
 - Margem de erro não alinha com ponto
 - Boost para highchart-contour
 - Suporte para multiplos highchart-contour
+- Error bar disaligned -- https://github.com/highcharts/highcharts/issues/5334
+- Error bar unpredictable scale -- https://github.com/highcharts/highcharts/issues/5334
 
 # OpenWRT
 - Support for docker
