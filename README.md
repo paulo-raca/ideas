@@ -6,7 +6,6 @@ Most of them will never happen :D
 
 
 # Highcharts
-- Margem de erro não alinha com ponto
 - Boost para highchart-contour
 - Suporte para multiplos highchart-contour
 - Error bar disaligned -- https://github.com/highcharts/highcharts/issues/5334
