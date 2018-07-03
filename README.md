@@ -6,8 +6,8 @@ Most of them will never happen :D
 
 
 # Highcharts
-- Boost para highchart-contour
-- Suporte para multiplos highchart-contour
+- Boost para highchart-contour - https://github.com/paulo-raca/highcharts-contour/issues/12
+- Suporte para multiplos highchart-contour - https://github.com/paulo-raca/highcharts-contour/issues/13
 - Error bar disaligned -- https://github.com/highcharts/highcharts/issues/5334
 - Error bar unpredictable scale -- https://github.com/highcharts/highcharts/issues/5334
 
