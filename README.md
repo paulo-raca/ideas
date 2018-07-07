@@ -4,6 +4,8 @@ Many of them are somehow related.
 
 Most of them will never happen :D
 
+# Neural Networks
+- Rotational Convolutions
 
 # Highcharts
 - Boost para highchart-contour - https://github.com/paulo-raca/highcharts-contour/issues/12
