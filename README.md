@@ -4,11 +4,6 @@ Many of them are somehow related.
 
 Most of them will never happen :D
 
-# Neural Networks
-- Rotational Convolutions
-- Regression which returns stddev
-- While trainning networks for Siamese/Tripplet classifiers, train it to also calculate a FAR and FRR
-
 # Highcharts
 - Boost para highchart-contour - https://github.com/paulo-raca/highcharts-contour/issues/12
 - Suporte para multiplos highchart-contour - https://github.com/paulo-raca/highcharts-contour/issues/13
@@ -168,13 +163,19 @@ Most of them will never happen :D
 - Encontrar / criar uma estrutura de dados / banco de dados para features de alta dimensionalidade, capaz de:
   - Listar N elementos mais próximos / elementos dentro de um raio
   - Usar distâncias de minkowski e Mahalanobis
-  - [R*_tree](https://en.wikipedia.org/wiki/R*_tree)?
+  - [R*_tree](https://en.wikipedia.org/wiki/R*_tree)? [SR-Tree](https://pdfs.semanticscholar.org/20b5/fc20821968a2e990183ee4613c591951597c.pdf)? [Hybrid-Tree](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/hybrid_tree.pdf)? [Review of different spatial trees](http://cs.ou.edu/~database/documents/bg98a.pdf)
 - Ideia:
   - Montar uma BSP com todos os dados, 
   - Durante a recuperação, em um nó não-folha, estimar a distancia minima do ponto buscado até cada nó filho
   - O nó não-folha itera dados de todos os nós filhos fazendo merge ordenado pela distancia
   - Os nós-filhos são acessados por ordem de distancia, o filho mais distante só sera acessado quando minDist(N) < dist(proximo)
   - yield do python é ótimo para isso :D
+  - Mesmo problema, solução terrivel: https://substantial.com/blog/2015/01/06/feature-vector-distance-postgres/
+
+## Neural Networks
+- Rotational Convolutions
+- Regression which returns stddev
+- While trainning networks for Siamese/Tripplet classifiers, train it to also calculate a FAR and FRR
 
 # Android
 
