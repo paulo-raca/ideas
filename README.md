@@ -6,6 +6,7 @@ Most of them will never happen :D
 
 # Neural Networks
 - Rotational Convolutions
+- 
 
 # Highcharts
 - Boost para highchart-contour - https://github.com/paulo-raca/highcharts-contour/issues/12
@@ -76,6 +77,27 @@ Most of them will never happen :D
   - Usable from fruit-Pi, arduinos, etc.
   - Compatible with USB, NFC, etc.
 - Create a fingerprint-enabled U2F device
+
+# U1F
+- U2F é ótimo, mas depende de uma autenticação anterior.
+- Quero substituir todas as chaves (De porta, carro, etc) do mundo por um protocolo padronizado
+- Infelizmente, é impossível para um único device atuar como 2 chaves distintas na mesma porta.
+  - E.g., no caso de U2F, o mesmo dispositivo pode autenticar João e Maria.
+  - Com U1F, apenas uma conta pode ser associada por domínio (A aplicão ou o dispositivo poderiam permitir multiplexar identidades)
+- No U2F, aplicação pode ser considerada segura e fornece as possíveis identidades do dispositivo "mastigadas", basta apenas confirma uma delas.
+- No U1F, a aplicação não podera servir para armazenamento, porém a confirmação ainda precisa ser única para cada aplicação.
+- Idealmente, assim como no U2F, o dispotivo poderá continuar sendo simples/barato/pouca memória/poucos algoritmos criptograficos.
+- Transações:
+  - Fechadura se identifica através da chave pública ("Oi, eu sou a porta da casa do joão")
+  - Dispositivo desafia a porta a provar sua identidade atráves de um desafio
+  - Porta responde o desafio
+  - Dispositivo se identifica ("Oi, eu sou a chave da casa do joão").
+    (Assim como no U2F, uma implementação tosca pode possuir uma única chave pública, mas não é recomendado)
+  - Porta faz o desafio
+  - Dispositivo responde o desafio
+  - Ambas as partes se conhecem e se confiam, a porta é aberta
+- Sub-fechaduras: Uma vez cadastrado na fechadura principal da casa, quero que minha chave abra todas as portas.
+  Neste caso, as chaves publicas de cada porta são assinadas pela chave-privada da fechadura principal.
 
 # [PyPCB](https://github.com/paulo-raca/PyPcb)
 - HDL for discrete components
@@ -176,4 +198,5 @@ Write a CLI that replaces logcat, adding:
   
   ## Testing
   - Fix AndroidJUnitRunner to be more "JUnit-y" -- That is, I want to be able to use RPC to implement a JUnit Runner on a process that executes within the Android test process. This should make it possible to create good test integration --  better than the current crapy integration with Android Studion and definitely better than AWS's DeviceFarm
+    JUnit5 sounds perfect
   
