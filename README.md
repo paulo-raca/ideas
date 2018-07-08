@@ -6,7 +6,8 @@ Most of them will never happen :D
 
 # Neural Networks
 - Rotational Convolutions
-- 
+- Regression which returns stddev
+- While trainning networks for Siamese/Tripplet classifiers, train it to also calculate a FAR and FRR
 
 # Highcharts
 - Boost para highchart-contour - https://github.com/paulo-raca/highcharts-contour/issues/12
