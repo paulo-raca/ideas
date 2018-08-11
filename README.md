@@ -176,6 +176,7 @@ Most of them will never happen :D
 - Rotational Convolutions
 - Regression which returns stddev
 - While trainning networks for Siamese/Tripplet classifiers, train it to also calculate a FAR and FRR
+- Stochastic gradient for crazy nonlinear functions
 
 # Android
 
