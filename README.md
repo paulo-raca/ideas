@@ -32,6 +32,11 @@ Most of them will never happen :D
 - MIDI-powered harmonica, pan flute, flute
 - Inspiration: https://hackaday.com/2018/03/23/servos-do-the-plucking-in-this-midi-music-box/
 
+# XPY
+XHP for Python
+- Implement custom python import: https://docs.python.org/3/reference/import.html
+- XHP docs: https://docs.hhvm.com/hack/XHP/introduction
+
 # Linux 
 
 ## [Greybus](https://github.com/projectara/greybus-spec/)
