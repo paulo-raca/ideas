@@ -99,6 +99,8 @@ XHP for Python
   - Ambas as partes se conhecem e se confiam, a porta é aberta
 - Sub-fechaduras: Uma vez cadastrado na fechadura principal da casa, quero que minha chave abra todas as portas.
   Neste caso, as chaves publicas de cada porta são assinadas pela chave-privada da fechadura principal.
+  
+- *AGORA EXISTE FIDO2*
 
 # [PyPCB](https://github.com/paulo-raca/PyPcb)
 - HDL for discrete components
