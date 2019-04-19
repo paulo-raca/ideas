@@ -14,6 +14,29 @@ Most of them will never happen :D
 - Support for docker
 - Support for terminal within LuCI (Using [xtermjs](https://xtermjs.org)?)
 
+# Reverse Proxy
+- Like ngrok or [serveo](https://serveo.net/)
+- Implemented with [asyncssh](https://asyncssh.readthedocs.io) and [aiohttp](https://aiohttp.readthedocs.io/)
+- servers created via `SSH -R`, like serveo
+- Clients can access over different protocols:
+  - HTTP/HTTPs, with one subdomain per client (Only for HTTP services, duh)
+  - Randomly allocated ports for TCP services (specific subdomain/port number can be available on IPv6)
+  - WebSockets (For TCP services) that tunnel the raw TCP traffic
+  - SSH using port forwarding (`ssh -L`)
+- Security -- Optionally, configure so that:
+  - HTTP server can only be accessed after passing through Password/Oauth gate
+  - TCP can only be accessed via `ssh -L`, using the same certificate
+  - Maybe implement IP whitelist/blacklist
+- Support for clusters:
+  - Stores mapping of tunnels in shared storage and forward between servers
+- Custom domain:
+  - Configured via DNS SVC, like serveo
+- Paying customers:
+  - Identified via their SSH certificate
+  - Get their own IP address/CNAME, which can be used on their custom domains
+  - TCP servers are now bound to customer IP and receive the requested number
+- Will have to have strong DNS integration
+
 # Libretro
 - Core for Hack CPU from Nand2Tetris
   - Customizable peripherals: Keyboard, Mouse, Screen, Sound, System Calls, Serial, etc
