@@ -37,6 +37,11 @@ Most of them will never happen :D
   - TCP servers are now bound to customer IP and receive the requested number
 - Will have to have strong DNS integration
 
+# AsyncIO Nettools
+- ping
+- traceroute
+- DNS (Client/Server)
+
 # Libretro
 - Core for Hack CPU from Nand2Tetris
   - Customizable peripherals: Keyboard, Mouse, Screen, Sound, System Calls, Serial, etc
