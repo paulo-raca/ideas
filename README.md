@@ -213,6 +213,27 @@ A micropython/asyncio-based runtime for PLC, based on events and dataflow.
 
 TODO: Details
 
+# QUIC
+
+## aiohttp
+
+aiohttp should support HTTP/3
+
+## SSH v3
+
+An essential feature of SSH is creating multiple tunnels for various subsystems, TCP channels, etc.
+QUIC provides an ideal transport for that.
+
+While we are at it:
+[ ] AsyncSSH support
+[ ] VHost support
+[ ] UDP / VPN tunnel support
+
+## Datagrams
+QUIC gives us all the guarantees of TCP and more, which is awesome, but maybe I could get <and more> without the TCP?
+
+Would it make sense to support lossy datagram transports as part of QUIC?
+
 # ML
 
 ## Banco de dados de Features
