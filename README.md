@@ -12,8 +12,10 @@ Most of them will never happen :D
 
 # OpenWRT
 - Support for docker
+  - [x] [Docker Engine](https://github.com/openwrt/packages/tree/master/utils/docker-ce)
+  - [ ] Docker compose
 - Support for terminal within LuCI (Using [xtermjs](https://xtermjs.org)?)
-
+  - [ ] [Non-merger implementation based on ttyd](https://github.com/tsl0922/ttyd/tree/master/openwrt/luci-app-terminal)
 # Reverse Proxy
 - Like ngrok or [serveo](https://serveo.net/)
 - Implemented with [asyncssh](https://asyncssh.readthedocs.io) and [aiohttp](https://aiohttp.readthedocs.io/)
