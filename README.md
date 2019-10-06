@@ -16,6 +16,7 @@ Most of them will never happen :D
   - [ ] Docker compose
 - Support for terminal within LuCI (Using [xtermjs](https://xtermjs.org)?)
   - [ ] [Non-merger implementation based on ttyd](https://github.com/tsl0922/ttyd/tree/master/openwrt/luci-app-terminal)
+
 # Reverse Proxy
 - Like ngrok or [serveo](https://serveo.net/)
 - Implemented with [asyncssh](https://asyncssh.readthedocs.io) and [aiohttp](https://aiohttp.readthedocs.io/)
@@ -40,9 +41,12 @@ Most of them will never happen :D
 - Will have to have strong DNS integration
 
 # AsyncIO Nettools
-- ping
-- traceroute
+- [Ping](https://github.com/stellarbit/aioping)
+- Traceroute
 - DNS (Client/Server)
+- tftp
+- DHCP
+- BGP
 
 # Libretro
 - Core for Hack CPU from Nand2Tetris
