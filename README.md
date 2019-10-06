@@ -206,6 +206,13 @@ XHP for Python
 - Scuba-like tool to visualize aggregated data.
 - Maybe Integrated with CRUD / Kibana / Keen.io, etc
 
+# Automation
+
+## PyLC
+A micropython/asyncio-based runtime for PLC, based on events and dataflow.
+
+TODO: Details
+
 # ML
 
 ## Banco de dados de Features
