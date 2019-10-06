@@ -230,6 +230,12 @@ XHP for Python
 
 # Android
 
+## Maybe open source:
+- DeviceFarm-cli
+  - Give another try on using SSH tunnels to access device's ADB
+- HiddenAPI
+- merged-Jars
+
 ## Logcat
 Write a CLI that replaces logcat, adding:
 - Package name, Process name, user name
