@@ -59,8 +59,8 @@ Most of them will never happen :D
 - Improvements to fusepy
   - Custom encode/decode functions
   - support for libfuse3
-- Completion of fusetree library
-- Use fusetree for MongoFS and SpotifyFS
+- Completion of [fusetree](https://github.com/paulo-raca/fusetree) library
+- Use fusetree for [MongoFS](https://github.com/paulo-raca/mongofs) and [SpotifyFS](https://github.com/paulo-raca/spotifyfs)
 
 # Protobuf
 The generated stubs kinda sucks -- Just like the thrift ones did until [nifty](https://github.com/facebookarchive/nifty)/[swift](https://github.com/facebookarchive/swift)/[drift](https://github.com/airlift/drift).
