@@ -218,6 +218,7 @@ XHP for Python
 - Regression which returns stddev
 - While trainning networks for Siamese/Tripplet classifiers, train it to also calculate a FAR and FRR
 - Stochastic gradient for crazy nonlinear functions
+- Recurrent neural network where instead of having a bazzilion cells and/or truncating the sequence, you propagate the gradients from previous iterations.
 
 # Android
 
