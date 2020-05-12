@@ -4,6 +4,17 @@ Many of them are somehow related.
 
 Most of them will never happen :D
 
+# CNC
+- Large and scalable
+- accurate to .1mm
+- foldable for easy atorage
+- Multi-tool:
+  - CNC router
+  - CO2 laser cutter
+  - 3D printer
+  - pick and place
+  - robotic arm
+
 # Highcharts
 - Boost para highchart-contour - https://github.com/paulo-raca/highcharts-contour/issues/12
 - Suporte para multiplos highchart-contour - https://github.com/paulo-raca/highcharts-contour/issues/13
