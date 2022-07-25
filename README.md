@@ -4,6 +4,54 @@ Many of them are somehow related.
 
 Most of them will never happen :D
 
+# [FIDO](https://fidoalliance.org/download/)
+- A pretty/portable/expandable library that implements FIDO
+  - Usable from fruit-Pi, arduinos, etc.
+  - Compatible with Bluetooth, NFC, HID
+- Create a fingerprint-enabled U2F device?
+
+## [Phone-based authenticator](https://github.com/paulo-raca/android-fido-authenticator)
+
+After a while it became clear that having a separate trinket for FIDO is impratical. They are expensive-ish, most people don't have them and they are usually limited to a minimalistic interface and a small number of resident keys (Necessary for 1-factor authentication)
+
+In the meantime, phones are on everybody's pockets and already contain all the hardware necessary. These should be first class authenticators!
+
+There are some steps in this direction, with Chrome already supporting using devices as authenticators -- However this is a chrome-only thing, UI could be better, and phones don't yet actually behave as NFC/Bluetooth authenticators.
+
+Also, it would be very desirable to sync the FIDO keys between devices, so that I don't lose access to all the things whenever I replace my phones (This did happen to me with a SoloKeys device 😖. I think this is what the whole Passkeys thing is about?
+
+Finally, on Android FIDO is implemented by GMS (Probably a terrible idea?). While it supports NFC/BLE/HID/Platform authenticators, it seems impossible to support my own software authenticator running locally.
+
+## Physical access
+
+While FIDO is great for web/app authentication and has been making great strides in this front, I'm mostly concerned on physical access:
+
+- Carrying keys is annoying,
+- Most RFID tags are insecure (Just a number that can be readily copied with proper equipment)
+- Biometrics has a number of issues (False positives, false negatives, _quality_ capture equipment is often expensive)
+
+Tapping a FIDO key over NFC reader on the door knob or padlock would be pratical, cheap and secure (And that would fit perfectly with using a phone for authentication).
+
+BLE would be suitable for Garage doors and cars. In the future, BLE direction-finding could be used to make everything even more secure (e.g., can only unlock within an specific area)
+
+# Automatically provision [Let's Encrypt](https://github.com/paulo-raca/asgi-acme) SSL certificate in Python
+
+The whole certificate provisioning thing is boring and painful, even with the great tooling that Let's Encrypt/ACME gave us.
+
+Ideally, in a zero-effort SSL provisioning, things would happen like this:
+- A new SSL connection is opened
+- The hostname is provided in the SNI
+- If we don't yet have a certificate for this hostname, hold this connection and provision on asynchronously
+  - Make a certificate request on Let's encrypt
+  - Perform an ACME challenge with alpn (So that we don't rely on other layers of the server)
+  - Fetch the signed certificate from Let's encrypt
+  - Resume the initial connection
+- Use the certificate from the cache
+
+I've looked into it and it is mostly possible. However, in python SSL doesn't provide an alpn callback (necessary for the ACME challenge), and, most importantly,
+the SNI callback is not async, and therefore cannot be paused until the certificate is generated asynchronously.
+
+
 # CNC
 - Large and scalable
 - accurate to .1mm
@@ -22,9 +70,6 @@ Most of them will never happen :D
 - Error bar unpredictable scale -- https://github.com/highcharts/highcharts/issues/5334
 
 # OpenWRT
-- Support for docker
-  - [x] [Docker Engine](https://github.com/openwrt/packages/tree/master/utils/docker-ce)
-  - [ ] Docker compose
 - Support for terminal within LuCI (Using [xtermjs](https://xtermjs.org)?)
   - [ ] [Non-merger implementation based on ttyd](https://github.com/tsl0922/ttyd/tree/master/openwrt/luci-app-terminal)
 
@@ -57,7 +102,6 @@ Most of them will never happen :D
 - DNS (Client/Server)
 - tftp
 - DHCP
-- BGP
 
 # Libretro
 - Core for Hack CPU from Nand2Tetris
@@ -106,11 +150,11 @@ XHP for Python
 ## LED dithering/PDM
 - Not all led drivers support multiple brightness levels -- We could use dithering instead!
 - ✓ Arduino: https://github.com/paulo-raca/ArduinoLedDithering
-- ✓ Linux: https://github.com/paulo-raca/linux/commit/ledtrig_dither
+- ✓ Linux: https://lore.kernel.org/all/20170815223413.GA8886@amd/T/
 
 # Experimental Design
   My HTML/CSS/JS skills were pretty lame when I wrote the current version
-  - Make a pretty UI. Probably use Bootstrap and/or React?
+  - Make a pretty UI. Maybe Ionic + React?
 
 # [PluggableUSB](https://github.com/arduino/Arduino/wiki/PluggableUSB-and-PluggableHID-howto)
 - Make a version based on [Linux Gadget](https://www.kernel.org/doc/Documentation/usb/gadget_configfs.txt)
@@ -125,35 +169,6 @@ XHP for Python
   - TCP version of HID?
     - Based on Wifi-Direct? (I wish ESP32 had support for Wifi Direct)
     - Support for Discovery? UPNP?
-
-# [U2F](https://fidoalliance.org/download/)
-- A pretty/portable/expandable library that implements U2F
-  - Usable from fruit-Pi, arduinos, etc.
-  - Compatible with USB, NFC, etc.
-- Create a fingerprint-enabled U2F device
-
-# U1F
-- U2F é ótimo, mas depende de uma autenticação anterior.
-- Quero substituir todas as chaves (De porta, carro, etc) do mundo por um protocolo padronizado
-- Infelizmente, é impossível para um único device atuar como 2 chaves distintas na mesma porta.
-  - E.g., no caso de U2F, o mesmo dispositivo pode autenticar João e Maria.
-  - Com U1F, apenas uma conta pode ser associada por domínio (A aplicão ou o dispositivo poderiam permitir multiplexar identidades)
-- No U2F, aplicação pode ser considerada segura e fornece as possíveis identidades do dispositivo "mastigadas", basta apenas confirma uma delas.
-- No U1F, a aplicação não podera servir para armazenamento, porém a confirmação ainda precisa ser única para cada aplicação.
-- Idealmente, assim como no U2F, o dispotivo poderá continuar sendo simples/barato/pouca memória/poucos algoritmos criptograficos.
-- Transações:
-  - Fechadura se identifica através da chave pública ("Oi, eu sou a porta da casa do joão")
-  - Dispositivo desafia a porta a provar sua identidade atráves de um desafio
-  - Porta responde o desafio
-  - Dispositivo se identifica ("Oi, eu sou a chave da casa do joão").
-    (Assim como no U2F, uma implementação tosca pode possuir uma única chave pública, mas não é recomendado)
-  - Porta faz o desafio
-  - Dispositivo responde o desafio
-  - Ambas as partes se conhecem e se confiam, a porta é aberta
-- Sub-fechaduras: Uma vez cadastrado na fechadura principal da casa, quero que minha chave abra todas as portas.
-  Neste caso, as chaves publicas de cada porta são assinadas pela chave-privada da fechadura principal.
-  
-- *AGORA EXISTE FIDO2*
 
 # [PyPCB](https://github.com/paulo-raca/PyPcb)
 - HDL for discrete components
