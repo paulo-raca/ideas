@@ -104,7 +104,7 @@ the SNI callback is not async, and therefore cannot be paused until the certific
 - DHCP
 
 # Libretro
-- Core for Hack CPU from Nand2Tetris
+- [Core for Hack CPU from Nand2Tetris](https://github.com/paulo-raca/nand2tetris/tree/master/libretro)
   - Customizable peripherals: Keyboard, Mouse, Screen, Sound, System Calls, Serial, etc
 - Core for Virtual Terminal
   - Execute bash, ssh, etc
