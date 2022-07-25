@@ -34,7 +34,7 @@ Tapping a FIDO key over NFC reader on the door knob or padlock would be pratical
 
 BLE would be suitable for Garage doors and cars. In the future, BLE direction-finding could be used to make everything even more secure (e.g., can only unlock within an specific area)
 
-# Automatically provision [Let's Encrypt](https://github.com/paulo-raca/asgi-acme) SSL certificate in Python
+# [Automatically provision Let's Encrypt SSL certificate in Python](https://github.com/paulo-raca/asgi-acme) 
 
 The whole certificate provisioning thing is boring and painful, even with the great tooling that Let's Encrypt/ACME gave us.
 
