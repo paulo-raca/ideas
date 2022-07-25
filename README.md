@@ -108,7 +108,6 @@ the SNI callback is not async, and therefore cannot be paused until the certific
   - Customizable peripherals: Keyboard, Mouse, Screen, Sound, System Calls, Serial, etc
 - Core for Virtual Terminal
   - Execute bash, ssh, etc
-- Export as OpenAI Gym
 
 # Fuse
 - Improvements to fusepy
