@@ -4,6 +4,27 @@ Many of them are somehow related.
 
 Most of them will never happen :D
 
+# Biometrics
+
+We've been here before :)
+
+## Scanner
+
+Current scanners just dump a bitmap. There is no cryptographic guarantee for the image source.
+
+- Support for (optional) live view, finger detection
+- All events should be signed by the device's own private key, which itself is part of an attestation chain.
+- Events should also contain a timestamp and an application-provided nonce, to ensure it was generated in the current session.
+- tflite might be used to perform on-device detection (just using the average image value was a bit crappy)
+- If possible, support on-device extraction/matching
+- Also Accessible wirelessly (wifi/BT) ?
+
+## New SDK
+
+- Must be [compatible with WebAssembly!](https://web.dev/porting-libusb-to-webusb/)
+- Use tflite for best performance on image operations
+
+
 # [FIDO](https://fidoalliance.org/download/)
 - A pretty/portable/expandable library that implements FIDO
   - Usable from fruit-Pi, arduinos, etc.
@@ -32,7 +53,11 @@ While FIDO is great for web/app authentication and has been making great strides
 
 Tapping a FIDO key over NFC reader on the door knob or padlock would be pratical, cheap and secure (And that would fit perfectly with using a phone for authentication).
 
+This could be achieved nicely using FIDO2 resident keys.
+
 BLE would be suitable for Garage doors and cars. In the future, BLE direction-finding could be used to make everything even more secure (e.g., can only unlock within an specific area)
+
+> [CCC Digital Key](https://carconnectivity.org/digital-key/) does that, but for cars.
 
 # [Automatically provision Let's Encrypt SSL certificate in Python](https://github.com/paulo-raca/asgi-acme) 
 
@@ -69,10 +94,6 @@ the SNI callback is not async, and therefore cannot be paused until the certific
 - Error bar disaligned -- https://github.com/highcharts/highcharts/issues/5334
 - Error bar unpredictable scale -- https://github.com/highcharts/highcharts/issues/5334
 
-# OpenWRT
-- Support for terminal within LuCI (Using [xtermjs](https://xtermjs.org)?)
-  - [ ] [Non-merger implementation based on ttyd](https://github.com/tsl0922/ttyd/tree/master/openwrt/luci-app-terminal)
-
 # Reverse Proxy
 - Like ngrok or [serveo](https://serveo.net/)
 - Implemented with [asyncssh](https://asyncssh.readthedocs.io) and [aiohttp](https://aiohttp.readthedocs.io/)
@@ -96,12 +117,13 @@ the SNI callback is not async, and therefore cannot be paused until the certific
   - TCP servers are now bound to customer IP and receive the requested number
 - Will have to have strong DNS integration
 
-# AsyncIO Nettools
-- [Ping](https://github.com/stellarbit/aioping)
-- Traceroute
-- DNS (Client/Server)
-- tftp
-- DHCP
+# [AsyncIO Nettools](https://github.com/paulo-raca/aio-nettools)
+- [x] Ping
+- [ ] Traceroute
+- [x] NDT7 (aka Speedtest)
+- [ ] TFTP
+- [ ] DNS (Client/Server)
+- [ ] DHCP
 
 # Libretro
 - [Core for Hack CPU from Nand2Tetris](https://github.com/paulo-raca/nand2tetris/tree/master/libretro)
@@ -253,6 +275,8 @@ While we are at it:
 [ ] AsyncSSH support
 [ ] VHost support
 [ ] UDP / VPN tunnel support
+
+> Someone else is on it: https://datatracker.ietf.org/doc/draft-bider-ssh-quic/
 
 ## Datagrams
 QUIC gives us all the guarantees of TCP and more, which is awesome, but maybe I could get <and more> without the TCP?
