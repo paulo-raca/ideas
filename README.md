@@ -4,19 +4,43 @@ Many of them are somehow related.
 
 Most of them will never happen :D
 
+# IOT
+
+## Ceiling lights
+
+- Big led light for the ceiling
+  - Adjustable brightness and temperature -- Maybe RGB.
+- Battery backup, so it can act as an emergency light
+- Integrates with SmartHome over Matter
+- Also supports a plain-old switch, just in case
+- While you have one big thing in the ceilling, also add:
+  - Temperature sensor
+  - Presence sensor (PIR?)
+  - IR Remote control (So it can control TV, AC, etc)
+
+## Wall switches
+- Integrates with SmartHome over Matter
+- Supports existing physical switches
+  - On/Off
+  - Toggle
+  - Rotary
+  - Capacitive
+- (Optional) Built-in switch for lamps, power sockets.
+
+
 # Biometrics
 
-We've been here before :)
-
-## Scanner
+## Crypto Fingerprint Scanner
 
 Current scanners just dump a bitmap. There is no cryptographic guarantee for the image source.
 
 - Support for (optional) live view, in-device finger detection
+  - Stretch goal: Support for Rolled fingerprints
+  - Stretch goal: Measure pulse for liveness detection. E.g.: https://www.instructables.com/DIY-Pulse-Oximeter/
 - All events should be signed by the device's own private key
   - which is part of an attestation chain.
 - Events should also contain a timestamp and an application-provided nonce, to ensure it was generated in the current session.
-- tflite might be used to perform on-device detection (just using the average image value was a bit crappy)
+- Use [TFLite](https://www.tensorflow.org/lite?hl=pt-br) for on-device finger detection (just using the average image value was a bit crappy)
 - If possible, support on-device extraction/matching
 - Also Accessible wirelessly (wifi/BT) from mobile device
 
