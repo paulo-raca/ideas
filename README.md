@@ -12,24 +12,21 @@ We've been here before :)
 
 Current scanners just dump a bitmap. There is no cryptographic guarantee for the image source.
 
-- Support for (optional) live view, finger detection
-- All events should be signed by the device's own private key, which itself is part of an attestation chain.
+- Support for (optional) live view, in-device finger detection
+- All events should be signed by the device's own private key
+  - which is part of an attestation chain.
 - Events should also contain a timestamp and an application-provided nonce, to ensure it was generated in the current session.
 - tflite might be used to perform on-device detection (just using the average image value was a bit crappy)
 - If possible, support on-device extraction/matching
-- Also Accessible wirelessly (wifi/BT) ?
+- Also Accessible wirelessly (wifi/BT) from mobile device
 
 ## New SDK
 
 - Must be [compatible with WebAssembly!](https://web.dev/porting-libusb-to-webusb/)
-- Use tflite for best performance on image operations
+- Use [TFLite](https://www.tensorflow.org/lite?hl=pt-br) for best performance on image operations
 
 
 # [FIDO](https://fidoalliance.org/download/)
-- A pretty/portable/expandable library that implements FIDO
-  - Usable from fruit-Pi, arduinos, etc.
-  - Compatible with Bluetooth, NFC, HID
-- Create a fingerprint-enabled U2F device?
 
 ## [Phone-based authenticator](https://github.com/paulo-raca/android-fido-authenticator)
 
@@ -59,34 +56,13 @@ BLE would be suitable for Garage doors and cars. In the future, BLE direction-fi
 
 > [CCC Digital Key](https://carconnectivity.org/digital-key/) does that, but for cars.
 
-# [Automatically provision Let's Encrypt SSL certificate in Python](https://github.com/paulo-raca/asgi-acme) 
-
-The whole certificate provisioning thing is boring and painful, even with the great tooling that Let's Encrypt/ACME gave us.
-
-Ideally, in a zero-effort SSL provisioning, things would happen like this:
-- A new SSL connection is opened
-- The hostname is provided in the SNI
-- If we don't yet have a certificate for this hostname, hold this connection and provision on asynchronously
-  - Make a certificate request on Let's encrypt
-  - Perform an ACME challenge with alpn (So that we don't rely on other layers of the server)
-  - Fetch the signed certificate from Let's encrypt
-  - Resume the initial connection
-- Use the certificate from the cache
-
-I've looked into it and it is mostly possible. However, in python SSL doesn't provide an alpn callback (necessary for the ACME challenge), and, most importantly,
-the SNI callback is not async, and therefore cannot be paused until the certificate is generated asynchronously.
-
-
-# CNC
-- Large and scalable
-- accurate to .1mm
-- foldable for easy atorage
-- Multi-tool:
-  - CNC router
-  - CO2 laser cutter
-  - 3D printer
-  - pick and place
-  - robotic arm
+# [AsyncIO Nettools](https://github.com/paulo-raca/aio-nettools)
+- [x] Ping
+- [ ] Traceroute
+- [x] NDT7 (aka Speedtest)
+- [ ] TFTP
+- [ ] DNS (Client/Server)
+- [ ] DHCP
 
 # Highcharts
 - Boost para highchart-contour - https://github.com/paulo-raca/highcharts-contour/issues/12
@@ -116,14 +92,33 @@ the SNI callback is not async, and therefore cannot be paused until the certific
   - Get their own IP address/CNAME, which can be used on their custom domains
   - TCP servers are now bound to customer IP and receive the requested number
 - Will have to have strong DNS integration
+# [Automatically provision Let's Encrypt SSL certificate in Python](https://github.com/paulo-raca/asgi-acme) 
 
-# [AsyncIO Nettools](https://github.com/paulo-raca/aio-nettools)
-- [x] Ping
-- [ ] Traceroute
-- [x] NDT7 (aka Speedtest)
-- [ ] TFTP
-- [ ] DNS (Client/Server)
-- [ ] DHCP
+The whole certificate provisioning thing is boring and painful, even with the great tooling that Let's Encrypt/ACME gave us.
+
+Ideally, in a zero-effort SSL provisioning, things would happen like this:
+- A new SSL connection is opened
+- The hostname is provided in the SNI
+- If we don't yet have a certificate for this hostname, hold this connection and provision on asynchronously
+  - Make a certificate request on Let's encrypt
+  - Perform an ACME challenge with alpn (So that we don't rely on other layers of the server)
+  - Fetch the signed certificate from Let's encrypt
+  - Resume the initial connection
+- Use the certificate from the cache
+
+I've looked into it and it is mostly possible. However, in python SSL doesn't provide an alpn callback (necessary for the ACME challenge), and, most importantly,
+the SNI callback is not async, and therefore cannot be paused until the certificate is generated asynchronously.
+
+# CNC
+- Large and scalable
+- accurate to .1mm
+- foldable for easy atorage
+- Multi-tool:
+  - CNC routerhttps://www.tensorflow.org/lite?hl=pt-br
+  - CO2 laser cutter
+  - 3D printer
+  - pick and place
+  - robotic arm
 
 # Libretro
 - [Core for Hack CPU from Nand2Tetris](https://github.com/paulo-raca/nand2tetris/tree/master/libretro)
@@ -137,14 +132,6 @@ the SNI callback is not async, and therefore cannot be paused until the certific
   - support for libfuse3
 - Completion of [fusetree](https://github.com/paulo-raca/fusetree) library
 - Use fusetree for [MongoFS](https://github.com/paulo-raca/mongofs) and [SpotifyFS](https://github.com/paulo-raca/spotifyfs)
-
-# Protobuf
-The generated stubs kinda sucks -- Just like the thrift ones did until [nifty](https://github.com/facebookarchive/nifty)/[swift](https://github.com/facebookarchive/swift)/[drift](https://github.com/airlift/drift).
-
-A better stub generator should be created, based on annotations and reflection.
-
-- [ ] Java, based on annotations
-- [ ] Python 3, based on @dataclass
 
 # MIDI
 - MIDI-powered harmonica, pan flute, flute
@@ -262,9 +249,9 @@ TODO: Details
 
 # QUIC
 
-## aiohttp
+## VPN 
 
-aiohttp should support HTTP/3
+> There is a standard: https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ip/
 
 ## SSH v3
 
@@ -278,12 +265,8 @@ While we are at it:
 
 > Someone else is on it: https://datatracker.ietf.org/doc/draft-bider-ssh-quic/
 
-## Datagrams
-QUIC gives us all the guarantees of TCP and more, which is awesome, but maybe I could get <and more> without the TCP?
 
-Would it make sense to support lossy datagram transports as part of QUIC?
-
-# ML
+# Machine Learning
 
 ## Banco de dados de Features
 - Encontrar / criar uma estrutura de dados / banco de dados para features de alta dimensionalidade, capaz de:
@@ -304,6 +287,14 @@ Would it make sense to support lossy datagram transports as part of QUIC?
 - While trainning networks for Siamese/Tripplet classifiers, train it to also calculate a FAR and FRR
 - Stochastic gradient for crazy nonlinear functions
 - Recurrent neural network where instead of having a bazzilion cells and/or truncating the sequence, you propagate the gradients from previous iterations.
+
+# Protobuf
+The generated stubs kinda sucks -- Just like the thrift ones did until [nifty](https://github.com/facebookarchive/nifty)/[swift](https://github.com/facebookarchive/swift)/[drift](https://github.com/airlift/drift).
+
+A better stub generator should be created, based on annotations and reflection.
+
+- [ ] Java, based on annotations
+- [ ] Python 3, based on @dataclass
 
 # Android
 
