@@ -15,6 +15,7 @@ Most of them will never happen :D
 - Also supports a plain-old switch, just in case
 - While you have one big thing in the ceilling, also add:
   - Temperature sensor
+  - Light sensor
   - Presence sensor (PIR?)
   - IR Remote control (So it can control TV, AC, etc)
 
