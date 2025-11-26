@@ -4,6 +4,15 @@ Many of them are somehow related.
 
 Most of them will never happen :D
 
+# py-key-value-aio,
+
+- Should support Google Datastore (Cheap)
+- Should provide a Dataloader-like Wrapper for batching operations
+- Not sure why it was designed with values being `dict[str, Any]` -- Most providers add a JSON serialization layer anyway
+- Add HashKeyWrapper
+- Preferences object, preferrably based on dataclass/Pydantic
+- Should provide a get_or_compute_and_set wrapper, usable with an @cached decorator
+
 # IOT
 
 ## Ceiling lights
@@ -134,6 +143,8 @@ Ideally, in a zero-effort SSL provisioning, things would happen like this:
 I've looked into it and it is mostly possible. However, in python SSL doesn't provide an alpn callback (necessary for the ACME challenge), and, most importantly,
 the SNI callback is not async, and therefore cannot be paused until the certificate is generated asynchronously.
 
+However this should work well-enough because the SSL operations likely run in a thread pool.
+
 # CNC
 - Large and scalable
 - accurate to .1mm
@@ -220,7 +231,7 @@ XHP for Python
 - Hardware:
   - Brains: ESP32
   - Sensors: MPU9250 + BMP280/BME280
-  - Light blade: WS2812 strip
+  - Light blade: WS2812B strip
   - Sound: [MAX98357](https://learn.adafruit.com/adafruit-max98357-i2s-class-d-mono-amp/overview)
   - Removable blade
   - 1000mAh LiPo battery
@@ -249,7 +260,7 @@ XHP for Python
   - 2* ATMEGA328PB instead of 1x ATMEGA2560?
 - New firmware
   - Communication protocol based on "Modern web technologies"
-    - AJAX? WebSocket? MQTT?
+    - OpenAPI? WebSocket? GraphQL? MQTT?
     - Fully documented -- Easier than writing a bunch of SDKs
   - Able to upload stand-alone modules
     - Turnstile is only a logic function that connects inputs and outputs
@@ -293,19 +304,6 @@ While we are at it:
 
 # Machine Learning
 
-## Banco de dados de Features
-- Encontrar / criar uma estrutura de dados / banco de dados para features de alta dimensionalidade, capaz de:
-  - Listar N elementos mais próximos / elementos dentro de um raio
-  - Usar distâncias de minkowski e Mahalanobis
-  - [R*_tree](https://en.wikipedia.org/wiki/R*_tree)? [SR-Tree](https://pdfs.semanticscholar.org/20b5/fc20821968a2e990183ee4613c591951597c.pdf)? [Hybrid-Tree](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/hybrid_tree.pdf)? [Review of different spatial trees](http://cs.ou.edu/~database/documents/bg98a.pdf)
-- Ideia:
-  - Montar uma BSP com todos os dados, 
-  - Durante a recuperação, em um nó não-folha, estimar a distancia minima do ponto buscado até cada nó filho
-  - O nó não-folha itera dados de todos os nós filhos fazendo merge ordenado pela distancia
-  - Os nós-filhos são acessados por ordem de distancia, o filho mais distante só sera acessado quando minDist(N) < dist(proximo)
-  - yield do python é ótimo para isso :D
-  - Mesmo problema, solução terrivel: https://substantial.com/blog/2015/01/06/feature-vector-distance-postgres/
-
 ## Neural Networks
 - Rotational Convolutions
 - Regression which returns stddev
@@ -319,36 +317,5 @@ The generated stubs kinda sucks -- Just like the thrift ones did until [nifty](h
 A better stub generator should be created, based on annotations and reflection.
 
 - [ ] Java, based on annotations
-- [ ] Python 3, based on @dataclass
+- [ ] Python 3, based on @dataclass or Pydantic
 
-# Android
-
-## Maybe open source:
-- DeviceFarm-cli
-  - Give another try on using SSH tunnels to access device's ADB
-- HiddenAPI
-- merged-Jars
-
-## Logcat
-Write a CLI that replaces logcat, adding:
-- Package name, Process name, user name
-- Filterable by package, user name, user id, process name, PID, TID, tag, message, Regex or wildcard
-- Uses colors to group messages from same user/package/process/thread
-- Also backup logs on ELK stack?
-
-## Containers
-- Use Android's multiuser support for implementing containers
-- A special permission lets an app act as a container manager, which can:
-  - Manage virtual users (Which internally are just 'regular' android users, but only visible to this app)
-  - Manage apps for tne virtual users
-  - Launch apps as the virtual user
-  - Instrument those apps to provide hooking
-  - Requires forking Android :(
-- Actually, that's very similar to [Managed Profiles](https://source.android.com/devices/tech/admin/managed-profiles)
-  - It should be possible to have many Managed Profiles per user (Seems to be possible, but not supported by the frontend app that handles the "CreateManagedProfile Intent")
-  - It should be possible (With a explicit user permission) to inject code into the process before the app starts up
-  
-  ## Testing
-  - Fix AndroidJUnitRunner to be more "JUnit-y" -- That is, I want to be able to use RPC to implement a JUnit Runner on a process that executes within the Android test process. This should make it possible to create good test integration --  better than the current crapy integration with Android Studion and definitely better than AWS's DeviceFarm
-    JUnit5 sounds perfect
-  
