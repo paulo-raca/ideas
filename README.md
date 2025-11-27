@@ -7,8 +7,10 @@ Most of them will never happen :D
 # py-key-value-aio,
 
 - Should support Google Datastore (Cheap)
-- Should provide a Dataloader-like Wrapper for batching operations
+- Should provide a Dataloader-like Wrapper for batching operations (kinda sucks that ttl/collection might differ on each call)
 - Not sure why it was designed with values being `dict[str, Any]` -- Most providers add a JSON serialization layer anyway
+- Add baseclass to transform (key, collection): `PrefixCollectionsWrapper`, `PrefixKeysWrapper`, `SingleCollectionWrapper`, etc
+- Add baseclass to transform values: `CompressionWrapper`, `DefaultValueWrapper`, `BaseEncryptionWrapper`, 
 - Add HashKeyWrapper
 - Preferences object, preferrably based on dataclass/Pydantic
 - Should provide a get_or_compute_and_set wrapper, usable with an @cached decorator
